@@ -1,0 +1,1 @@
+// Keep svgs in this folder

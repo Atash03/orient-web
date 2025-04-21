@@ -1,0 +1,12 @@
+message="$(cat "$1")"
+requiredPattern="^(fix|feat|doc|styles|refactor|test|chore|bump)\([^)]+\): .*$"
+
+if ! [[ $message =~ $requiredPattern ]]; then
+  echo "Error in commit message"
+  echo "Commit message must match the format:"
+  echo "<type>(description): <what was done>"
+  echo "Examples:"
+  echo "feat(eslint): Added new functionality"
+  echo "fix(eslint): Fixed linter errors"
+  exit 1
+fi
