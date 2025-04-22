@@ -1,7 +1,6 @@
+import { UserResponseType, UserType } from '../model/types';
 
-export const mapUserResponse = (user: any): any => ({
+export const mapUserResponse = (user: UserResponseType): UserType => ({
   name: user.name,
   email: user.email,
-  phonenumber: user.phonenumber,
-  // Etc.
 });

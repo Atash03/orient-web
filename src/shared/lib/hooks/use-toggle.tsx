@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react';
 
 interface UseToggleValues {
-  isToggle: boolean
-  onToggle: () => void
-  onOpen: () => void
-  onClose: () => void
+  isToggle: boolean;
+  onToggle: () => void;
+  onOpen: () => void;
+  onClose: () => void;
 }
 
 const useToggle = (): UseToggleValues => {

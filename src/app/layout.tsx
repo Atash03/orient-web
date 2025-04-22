@@ -1,5 +1,5 @@
-import "./globals.css";
-import AppProvider from "@/providers";
+import './globals.css';
+import AppProvider from '@/providers';
 
 export default function RootLayout({
   children,
