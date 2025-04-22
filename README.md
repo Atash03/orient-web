@@ -1,6 +1,4 @@
-# Esse Elite Groups - Website
-
-Project structured with Feature-Sliced Design architecture, fully set up with ESLint, Prettier, and Husky for code quality.
+The project structured with Feature-Sliced Design architecture, fully set up with ESLint, Prettier, and Husky for code quality.
 
 ## Getting Started
 
