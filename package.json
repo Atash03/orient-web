@@ -25,7 +25,7 @@
     "@commitlint/types": "^19.8.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@tanstack/react-query-devtools": "^5.74.4",
+    "@tanstack/react-query-devtools": "^5.74.6",
     "@types/node": "^22.14.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
