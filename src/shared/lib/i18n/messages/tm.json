@@ -1,0 +1,30 @@
+{
+  "header": {
+    "quote": "Biziň gollanmamyz adamlary birleşdirýän zat",
+    "inputPlaceholder": "Gözleg teksti"
+  },
+  "lentaNews": {
+    "title": "Turkmenistan habarlar",
+    "button": "Ähli habarlar"
+  },
+  "newsCard": {
+    "type": "Görnüş"
+  },
+  "buttons": {
+    "showMore": "has köp görkez"
+  },
+  "headings": {
+    "inTheWorld": "Dünýäde",
+    "mostRead": "Iň köp okalýar",
+    "editorsChoice": "Redaktoryň saýlamasy",
+    "articles": "Makalalar",
+    "videos": "Wideolar",
+    "photos": "Suratlar"
+  },
+  "footer": {
+    "copyright": "Copyright 2017-{year} ORIENT - HABARLAR AGENSTWASY | Ulanyjy şertnamasy"
+  },
+  "navigation": {
+    "all": "Hemmesi"
+  }
+}

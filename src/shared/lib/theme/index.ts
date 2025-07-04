@@ -1,1 +1,1 @@
-// Theme
+export { inter } from './fonts';

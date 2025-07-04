@@ -1,0 +1,30 @@
+{
+  "header": {
+    "quote": "Our orientation is to bring people together",
+    "inputPlaceholder": "Search text"
+  },
+  "lentaNews": {
+    "title": "News Turkmenistan",
+    "button": "All news"
+  },
+  "newsCard": {
+    "type": "Type"
+  },
+  "buttons": {
+    "showMore": "show more"
+  },
+  "headings": {
+    "inTheWorld": "In the World",
+    "mostRead": "Most read",
+    "editorsChoice": "Editors' choice",
+    "articles": "Posts",
+    "videos": "Video",
+    "photos": "Photo"
+  },
+  "footer": {
+    "copyright": "Copyright 2017-{year} ORIENT - NEWS AGENCY | User Agreement"
+  },
+  "navigation": {
+    "all": "All"
+  }
+}

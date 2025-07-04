@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+@theme {
+  /* heading */
+  --text-heading-1: 48px;
+  --text-heading-2: 36px;
+  --text-heading-3: 32px;
+  --text-heading-4: 28px;
+  --text-heading-5: 24px;
+  --text-heading-6: 20px;
+  /* text */
+  --text-text-1: 18px;
+  --text-text-2: 16px;
+  --text-text-3: 14px;
+  --text-text-4: 12px;
+}

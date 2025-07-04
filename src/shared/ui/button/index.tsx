@@ -5,8 +5,8 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
 }
 
-const Button = forwardRef<HTMLButtonElement, Props>(({ ...props }) => {
-  return <button {...props}>Default buton</button>;
+const Button = forwardRef<HTMLButtonElement, Props>(({ children, ...props }) => {
+  return <button {...props}>{children}</button>;
 });
 
 Button.displayName = 'Button';

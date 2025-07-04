@@ -7,6 +7,10 @@ const QueryProvider = ({ children }: { children: ReactNode }) => {
   const [queryClient] = useState(
     new QueryClient({
       defaultOptions: {
+        queries: {
+          // With SSR, we usually want to set some default staleTime
+          staleTime: 60 * 1000,
+        },
         mutations: {
           onError: (error) => {
             const err = error as Error & { status: number };

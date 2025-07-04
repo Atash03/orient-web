@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-export const client = axios.create({
-  baseURL: '', // Get url from env,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+axios.defaults.baseURL = process.env.BASE_URL;
 
-// Add axios interceptor configuration here
+export const axiosInstance = axios.create({
+  timeout: 10000,
+});
