@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = process.env.BASE_URL;
-
 export const axiosInstance = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   timeout: 10000,
 });
