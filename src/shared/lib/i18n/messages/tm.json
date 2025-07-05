@@ -8,7 +8,8 @@
     "button": "Ähli habarlar"
   },
   "newsCard": {
-    "type": "Görnüş"
+    "type": "Görnüş",
+    "author": "Awtory"
   },
   "buttons": {
     "showMore": "has köp görkez"
@@ -26,5 +27,9 @@
   },
   "navigation": {
     "all": "Hemmesi"
+  },
+  "search": {
+    "header": "«{search}» üçin netijeler",
+    "error": "Hiç zat tapylmady"
   }
 }

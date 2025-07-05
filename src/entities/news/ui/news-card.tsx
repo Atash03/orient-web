@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import React, { HTMLAttributes } from 'react';
 import { NewsModel } from '../model';
 import { cn, constructDate } from '@/shared/lib/utils';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
+import { Link } from '@/shared/lib/i18n/navigation';
 
 interface Props extends HTMLAttributes<HTMLAnchorElement> {
   item: NewsModel;
@@ -15,7 +15,7 @@ const NewsCard: React.FC<Props> = async ({ item, className, ...props }) => {
 
   return (
     <Link
-      href={''}
+      href={`/post/${item.id}`}
       className={cn(
         'flex min-h-[370px] w-full flex-col gap-[8px] md:grid md:min-h-[275px] md:grid-cols-3 lg:grid-cols-2',
         className,

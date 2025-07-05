@@ -1,4 +1,5 @@
 import { MenuNews } from '@/widgets/menu';
+import { getMenuNews } from '@/widgets/menu/api/get-menu-news';
 import React from 'react';
 
 interface Params {
@@ -16,7 +17,7 @@ async function Page({ params, searchParams }: Params) {
 
   return (
     <main className="flex-1">
-      <MenuNews menu={menu} page={page ?? '1'} search={search ?? ''} />
+      <MenuNews fetchFn={() => getMenuNews(menu, page ?? '1', search ?? '')} />
     </main>
   );
 }

@@ -15,8 +15,8 @@ export const constructDate = (date: string) => {
   };
   const fullDate = `${d.date}.${d.month}.${d.year}`;
   const t = {
-    hour: createdAt.getHours() > 10 ? createdAt.getHours() : `0${createdAt.getHours()}`,
-    minutes: createdAt.getMinutes() > 10 ? createdAt.getMinutes() : `0${createdAt.getMinutes()}`,
+    hour: createdAt.getHours() >= 10 ? createdAt.getHours() : `0${createdAt.getHours()}`,
+    minutes: createdAt.getMinutes() >= 10 ? createdAt.getMinutes() : `0${createdAt.getMinutes()}`,
   };
   const time = `${t.hour}:${t.minutes}`;
   return { fullDate, time };

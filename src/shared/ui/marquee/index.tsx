@@ -6,9 +6,9 @@ interface Props {
   texts: NewsModel[];
 }
 
-const Marquee: React.FC<Props> = ({ texts }) => {
+export const Marquee: React.FC<Props> = ({ texts }) => {
   return (
-    <div className="bg-primary relative flex overflow-x-hidden text-white">
+    <div className="relative flex overflow-x-hidden bg-[#00822C] text-white">
       <div className="animate-marquee flex gap-4 whitespace-nowrap py-2">
         {texts.map((item, i) => (
           <Link href={''} key={i} className="flex items-center gap-4">
@@ -33,5 +33,3 @@ const Marquee: React.FC<Props> = ({ texts }) => {
     </div>
   );
 };
-
-export default Marquee;

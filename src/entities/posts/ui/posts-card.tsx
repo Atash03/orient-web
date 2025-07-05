@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import React, { HTMLAttributes } from 'react';
 import { PostModel } from '../model';
 import { cn, constructDate } from '@/shared/lib/utils';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { ModelCategory } from '@/shared/types';
+import { Link } from '@/shared/lib/i18n/navigation';
 
 interface Props extends HTMLAttributes<HTMLAnchorElement> {
   item: PostModel;
@@ -18,7 +18,7 @@ export const PostsCard: React.FC<Props> = ({ item, categories, summary, classNam
 
   return (
     <Link
-      href={''}
+      href={`/post/${item.id}`}
       className={cn(
         'flex min-h-[370px] w-full flex-col gap-[8px] md:grid md:min-h-[275px] md:grid-cols-3 lg:grid-cols-2',
         className,
@@ -41,7 +41,9 @@ export const PostsCard: React.FC<Props> = ({ item, categories, summary, classNam
           <div className="text-secondary-800 flex items-center gap-[8px] md:hidden">
             <span>{t('type')}</span>
             <span>&#xB7;</span>
-            <span className="capitalize">{item.categories[0].name}</span>
+            {item.categories.length && (
+              <span className="capitalize">{item.categories[0].name}</span>
+            )}
           </div>
           <div className="flex items-center gap-[4px] text-[#4A5A4F]">
             <span>{fullDate}</span>

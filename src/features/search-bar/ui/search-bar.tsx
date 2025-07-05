@@ -6,6 +6,7 @@ import Image from 'next/image';
 import React, { useState, useMemo, useEffect } from 'react';
 import { debounce } from '@/shared/lib/utils';
 import { useRouter, usePathname } from '@/shared/lib/i18n/navigation';
+import { useSearchParams } from 'next/navigation';
 
 interface Props {
   label?: string;
@@ -14,7 +15,9 @@ interface Props {
 
 export function SearchBar({ label, className }: Props) {
   const t = useTranslations('header');
-  const [text, setText] = useState('');
+  const searchParams = useSearchParams();
+  const searchValue = searchParams.get('search') || '';
+  const [text, setText] = useState(searchValue);
   const router = useRouter();
   const pathname = usePathname();
 

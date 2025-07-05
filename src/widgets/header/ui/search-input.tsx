@@ -1,12 +1,14 @@
 'use client';
 import { searchSvg, exit } from '@/shared/assets/svgs';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import OrientLogo from './orient-logo';
 import ScoialLinks from './social-links';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/shared/lib/utils';
 import { useIsDesktop } from '@/shared/lib/hooks';
+import { useRouter } from '@/shared/lib/i18n/navigation';
+import { debounce } from '@/shared/lib/utils';
 
 interface Props {
   socials: {
@@ -21,15 +23,45 @@ const SearchInput: React.FC<Props> = ({ socials }) => {
   const isDesktop = useIsDesktop();
   const [isOpen, setIsOpen] = React.useState(false);
   const [text, setText] = React.useState('');
+  const router = useRouter();
+
+  // Debounced update of search param
+  const updateSearchParam = useMemo(
+    () =>
+      debounce((...args: unknown[]) => {
+        const value = (args[0] ?? '') as string;
+        const url = new URL(window.location.href);
+        if (value) {
+          url.searchParams.set('search', value);
+          router.push('/new/search' + url.search);
+        } else {
+          url.searchParams.delete('search');
+        }
+      }, 300),
+    [router],
+  );
+
+  useEffect(() => {
+    updateSearchParam(text);
+  }, [text, updateSearchParam]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const goHome = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.keys().forEach((key) => url.searchParams.delete(key));
+    setText('');
+    router.push('/' + url.search);
+  };
+
   return (
     <div className="flex flex-1 items-center justify-between gap-[24px]">
       <div className="relative flex items-center gap-[8px]">
-        <OrientLogo />
+        <button onClick={goHome} className="cursor-pointer">
+          <OrientLogo />
+        </button>
         <h1
           className={cn(
             'text-tertiary-500 absolute left-[calc(100%+8px)] hidden text-nowrap text-[min(2.9vw,20px)] font-[600] leading-[28px] transition-all duration-300 sm:block lg:relative lg:left-0 lg:w-full lg:max-w-[376px] lg:text-wrap lg:text-[24px] xl:max-w-fit',

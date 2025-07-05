@@ -1,10 +1,10 @@
 import React from 'react';
 import { getHomeTop } from '../api/get-home-top';
-import Marquee from './marquee';
 import FeaturedNews from './featured-news';
-import LentaNews from './lenta-news';
+
 import { getPosts } from '../api/get-posts';
 import { HomePosts } from './posts';
+import { LentaNews, Marquee } from '@/shared/ui';
 
 const HomeTop = async () => {
   const homeTopData = await getHomeTop();
@@ -27,7 +27,7 @@ const HomeTop = async () => {
         <HomePosts posts={posts.data.data} showNumber={3} />
         <LentaNews
           news={homeTopData.data.lenta}
-          className="lg:mt-[40px] xl:h-full xl:max-h-[528px]"
+          className="hidden md:flex md:flex-col lg:mt-[40px] xl:h-full xl:max-h-[528px]"
         />
       </section>
     </section>

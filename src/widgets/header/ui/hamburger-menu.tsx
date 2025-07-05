@@ -1,6 +1,6 @@
 'use client';
 import { cn } from '@/shared/lib/utils';
-import React from 'react';
+import React, { useEffect } from 'react';
 import LangDropdown from './lang-dropdown';
 import { MenuItem } from '../model/header-response';
 import { useLocale } from 'next-intl';
@@ -12,6 +12,18 @@ const HamburgerMenu = ({ data }: { data: MenuItem[] }) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <>
