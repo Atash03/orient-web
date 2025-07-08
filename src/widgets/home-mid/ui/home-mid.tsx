@@ -19,8 +19,12 @@ export const HomeMid = async () => {
   return (
     <section>
       <div className="container hidden md:flex md:flex-col md:gap-[80px] lg:grid lg:grid-cols-2 lg:gap-[24px]">
-        <NewsSectionLayout data={homeMidData.data.world} title={headings('inTheWorld')} href="" />
-        <NewsSectionLayout data={homeMidData.data.popular} title={headings('mostRead')} href="" />
+        <NewsSectionLayout
+          data={homeMidData.data.world}
+          title={headings('inTheWorld')}
+          href="/posts/news?postType=world"
+        />
+        <NewsSectionLayout data={homeMidData.data.popular} title={headings('mostRead')} />
       </div>
       <div className="lg:text-on-surface bg-[#00822C] text-white lg:mt-[70px] lg:bg-transparent">
         <EditorsChoice data={homeMidData.data.popular} />

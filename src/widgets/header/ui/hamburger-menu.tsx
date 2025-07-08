@@ -100,7 +100,7 @@ interface MenuItemComponentProps {
   index: number;
   activeIndex: number | null;
   setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>;
-  toggleMenu: () => void
+  toggleMenu: () => void;
 }
 
 const MenuItemComponent = ({
@@ -108,7 +108,7 @@ const MenuItemComponent = ({
   activeIndex,
   index,
   setActiveIndex,
-  toggleMenu
+  toggleMenu,
 }: MenuItemComponentProps) => {
   const [activeSubIndex, setActiveSubIndex] = React.useState<number | null>(null);
   const router = useRouter();
@@ -120,7 +120,7 @@ const MenuItemComponent = ({
       setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
     } else if (menu.url) {
       const url = locale === 'ru' ? menu.url : menu.viewBag.locale[locale as 'en' | 'tm'].url;
-      toggleMenu()
+      toggleMenu();
       router.push(url);
     }
   };

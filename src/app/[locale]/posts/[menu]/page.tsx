@@ -8,6 +8,7 @@ interface Params {
   searchParams?: Promise<{
     search?: string;
     page?: string;
+    postType?: string;
   }>;
 }
 
@@ -15,11 +16,16 @@ async function Page({ params, searchParams }: Params) {
   const { menu } = await params;
   const page = await (await searchParams)?.page;
   const search = await (await searchParams)?.search;
+  const postType = await (await searchParams)?.postType;
+
+  const endpoint = menu === 'media' ? menu : `posts/${menu}`;
 
   return (
-    <main className="flex-1 w-full">
+    <main className="w-full flex-1">
       <Suspense key={menu + String(page) + String(search)} fallback={<MenuNewsSkleton />}>
-        <MenuNews fetchFn={() => getMenuNews(menu, page ?? '1', search ?? '')} />
+        <MenuNews
+          fetchFn={() => getMenuNews(endpoint, page ?? '1', search ?? '', postType ?? '')}
+        />
       </Suspense>
     </main>
   );

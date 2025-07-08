@@ -7,14 +7,16 @@ export const getMenuNews = async (
   endpoint: string,
   page: string,
   search?: string,
+  postType?: string,
 ): Promise<GetDataDTO<PostModel> | undefined> => {
   const locale = await getLocale();
 
   try {
-    const { data, status, statusText } = await axiosInstance.get(`/${locale}/posts/${endpoint}`, {
+    const { data, status, statusText } = await axiosInstance.get(`/${locale}/${endpoint}`, {
       params: {
         page,
         search,
+        postType,
       },
     });
 
