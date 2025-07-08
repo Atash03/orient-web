@@ -1,6 +1,7 @@
+import { MenuNewsSkleton } from '@/shared/ui';
 import { MenuNews } from '@/widgets/menu';
 import { getMenuNews } from '@/widgets/menu/api/get-menu-news';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 interface Params {
   params: Promise<{ locale: string; menu: string }>;
@@ -16,8 +17,10 @@ async function Page({ params, searchParams }: Params) {
   const search = await (await searchParams)?.search;
 
   return (
-    <main className="flex-1">
-      <MenuNews fetchFn={() => getMenuNews(menu, page ?? '1', search ?? '')} />
+    <main className="flex-1 w-full">
+      <Suspense key={menu + String(page) + String(search)} fallback={<MenuNewsSkleton />}>
+        <MenuNews fetchFn={() => getMenuNews(menu, page ?? '1', search ?? '')} />
+      </Suspense>
     </main>
   );
 }

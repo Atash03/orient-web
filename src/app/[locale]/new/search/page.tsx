@@ -1,7 +1,8 @@
 import { MenuNews, MenuSearchHeading } from '@/widgets/menu';
 import { SearchBar } from '@/features/search-bar';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { getSearchNews } from '@/widgets/menu/api/get-search-news';
+import { MenuNewsSkleton } from '@/shared/ui';
 
 interface Params {
   searchParams?: Promise<{
@@ -22,7 +23,9 @@ async function Page({ searchParams }: Params) {
       </div>
       {search && <MenuSearchHeading search={search} />}
       <main className="w-full flex-1">
-        <MenuNews fetchFn={() => getSearchNews(page ?? '1', search ?? '')} />
+        <Suspense key={String(page) + String(search)} fallback={<MenuNewsSkleton />}>
+          <MenuNews fetchFn={() => getSearchNews(page ?? '1', search ?? '')} />
+        </Suspense>
       </main>
     </main>
   );

@@ -69,6 +69,7 @@ const HamburgerMenu = ({ data }: { data: MenuItem[] }) => {
             index={i}
             activeIndex={activeIndex}
             setActiveIndex={setActiveIndex}
+            toggleMenu={toggleMenu}
           />
         ))}
         <hr className="bg-[#D0DDD7]" />
@@ -99,6 +100,7 @@ interface MenuItemComponentProps {
   index: number;
   activeIndex: number | null;
   setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>;
+  toggleMenu: () => void
 }
 
 const MenuItemComponent = ({
@@ -106,23 +108,25 @@ const MenuItemComponent = ({
   activeIndex,
   index,
   setActiveIndex,
+  toggleMenu
 }: MenuItemComponentProps) => {
   const [activeSubIndex, setActiveSubIndex] = React.useState<number | null>(null);
   const router = useRouter();
   const locale = useLocale();
 
-  const toggleMenu = () => {
+  const handleMenuClick = () => {
     // if menu has submenus, then toggle it, and if it hasn't, then redirect to the url
     if (menu.items) {
       setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
     } else if (menu.url) {
       const url = locale === 'ru' ? menu.url : menu.viewBag.locale[locale as 'en' | 'tm'].url;
+      toggleMenu()
       router.push(url);
     }
   };
 
   return (
-    <div onClick={toggleMenu} className="px-[24px] py-[12px]">
+    <div onClick={handleMenuClick} className="px-[24px] py-[12px]">
       <div className="flex items-center gap-[8px]">
         <span>
           {locale === 'ru' ? menu.title : menu.viewBag.locale[locale as 'en' | 'tm'].title}
@@ -156,6 +160,7 @@ const MenuItemComponent = ({
               index={i}
               activeIndex={activeSubIndex}
               setActiveIndex={setActiveSubIndex}
+              toggleMenu={toggleMenu}
             />
           ))}
         </div>

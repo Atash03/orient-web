@@ -24,7 +24,7 @@ export async function MenuNews({
     <section className="flex flex-col items-center gap-[64px]">
       <div className="mt-[40px] flex w-full flex-col gap-[24px]">
         {data &&
-          data.map((item) => (
+          data.map((item) => item.main_image && (
             <div key={item.id} className="flex flex-col gap-[24px]">
               <PostsCard
                 item={item}
