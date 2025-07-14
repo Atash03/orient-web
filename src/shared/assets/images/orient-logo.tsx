@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrientLogo = () => (
+export const OrientLogo = () => (
   <svg
     className="shrink-0"
     width="112"
@@ -41,5 +41,3 @@ const OrientLogo = () => (
     </defs>
   </svg>
 );
-
-export default OrientLogo;

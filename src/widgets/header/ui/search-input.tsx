@@ -2,13 +2,13 @@
 import { searchSvg, exit } from '@/shared/assets/svgs';
 import Image from 'next/image';
 import React, { useEffect, useMemo } from 'react';
-import OrientLogo from './orient-logo';
 import ScoialLinks from './social-links';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/shared/lib/utils';
 import { useIsDesktop } from '@/shared/lib/hooks';
 import { useRouter } from '@/shared/lib/i18n/navigation';
 import { debounce } from '@/shared/lib/utils';
+import { OrientLogo } from '@/shared/assets/images';
 
 interface Props {
   socials: {

@@ -18,7 +18,7 @@ export const PostsCard: React.FC<Props> = ({ item, categories, summary, classNam
 
   return (
     <Link
-      href={`/post/${item.id}`}
+      href={`/post/${item.id}/${item.slug}`}
       className={cn(
         'flex min-h-[370px] w-full flex-col gap-[8px] md:grid md:min-h-[275px] md:grid-cols-3 lg:grid-cols-2',
         className,

@@ -22,7 +22,7 @@ function SectionsList({ photos, videos, posts }: Props) {
       <SectionTemplate<PostModel>
         data={[posts[0], posts[1], posts[2], posts[3]]}
         headingTitle="articles"
-        href=""
+        href="/posts/stati"
         renderItem={(item) =>
           !isDesktop ? (
             <CarouselItem key={item.id} className="basis-2/3 md:basis-1/3">

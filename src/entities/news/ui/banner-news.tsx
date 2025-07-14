@@ -11,7 +11,7 @@ interface Props extends HTMLAttributes<HTMLAnchorElement> {
 const BannerNewsItem: React.FC<Props> = ({ item, className, ...props }) => {
   return (
     <Link
-      href={`/post/${item.id}`}
+      href={`/post/${item.id}/${item.slug}`}
       className={cn('relative size-full overflow-hidden rounded-[4px] text-[#F0F2EF]', className)}
       {...props}>
       <Image src={item.main_image} alt={item.title} fill className="object-cover" />

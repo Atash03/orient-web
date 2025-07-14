@@ -1,1 +1,1 @@
-// Keep images in this folder
+export {OrientLogo} from './orient-logo'

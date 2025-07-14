@@ -12,7 +12,7 @@ interface Props extends HTMLAttributes<HTMLAnchorElement> {
 const EditorNewsCard: React.FC<Props> = ({ item, className }) => {
   return (
     <Link
-      href={`/post/${item.id}`}
+      href={`/post/${item.id}/${item.slug}`}
       className={cn(
         'bg-surface-600 border-surface-700 text-text-3 flex h-full min-h-[312px] w-full max-w-[320px] cursor-pointer flex-col overflow-hidden rounded-[4px] border md:max-w-full',
         className,

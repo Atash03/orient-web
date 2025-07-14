@@ -12,7 +12,7 @@ const FlatNewsCard: React.FC<Props> = ({ item, className, ...props }) => {
 
   return (
     <Link
-      href={`/post/${item.id}`}
+      href={`/post/${item.id}/${item.slug}`}
       className={cn('text-text-3 text-on-surface flex w-full gap-[8px] text-balance', className)}
       {...props}>
       <span className="text-secondary-800 font-[400]">{time}</span>
