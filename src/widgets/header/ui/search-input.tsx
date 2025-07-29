@@ -43,7 +43,7 @@ const SearchInput: React.FC<Props> = ({ socials }) => {
 
   useEffect(() => {
     updateSearchParam(text);
-  }, [text, updateSearchParam]);
+  }, [text]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

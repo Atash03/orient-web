@@ -8,6 +8,9 @@ export type GetPostInfoDTO = {
 
 export type PostDetailed = {
   id: number;
+  powerseo_title: string;
+  powerseo_description: string;
+  powerseo_keywords: string;
   content_html: string;
   author: null | string;
   title: string;

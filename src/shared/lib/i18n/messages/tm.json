@@ -30,6 +30,7 @@
   },
   "search": {
     "header": "«{search}» üçin netijeler",
+    "searchInCategory": "Kategoriýanyň içinde gözleg:",
     "error": "Hiç zat tapylmady"
   }
 }

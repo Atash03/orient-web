@@ -1,1 +1,1 @@
-export {OrientLogo} from './orient-logo'
+export { OrientLogo } from './orient-logo';

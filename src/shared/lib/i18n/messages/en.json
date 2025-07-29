@@ -30,6 +30,7 @@
   },
   "search": {
     "header": "Results found for «{search}»",
+    "searchInCategory": "Search within category:",
     "error": "Nothing found"
   }
 }
