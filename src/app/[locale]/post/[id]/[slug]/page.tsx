@@ -17,6 +17,19 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: post?.data[0].powerseo_title,
     description: post?.data[0].powerseo_description,
     keywords: post?.data[0].powerseo_keywords,
+    openGraph: {
+      siteName: 'orient.tm',
+      title: post?.data[0].powerseo_title,
+      description: post?.data[0].powerseo_description,
+      url: post?.data[0].url,
+      images: {
+        url: post?.data[0].main_image ?? '',
+      },
+      type: 'article',
+      publishedTime: post?.data[0].published_at,
+      authors: post?.data[0].author,
+      section: post?.data[0].categories[0].name,
+    },
   };
 }
 
