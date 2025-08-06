@@ -14,6 +14,22 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        source: '/feed',
+        headers: [
+          { key: 'X-Blocked-By', value: 'Next.js' },
+        ],
+      },
+      {
+        source: '/feed/:path*',
+        headers: [
+          { key: 'X-Blocked-By', value: 'Next.js' },
+        ],
+      },
+    ];
+  },
 };
 
 const withNextIntl = createNextIntlPlugin('./src/shared/lib/i18n/request.ts');

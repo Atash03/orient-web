@@ -1,7 +1,9 @@
 import { BannerNewsItem, NewsModel } from '@/entities/news';
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, Suspense } from 'react';
 import FeaturedNewsMobile from './featured-news-mobile';
 import { cn } from '@/shared/lib/utils';
+import { Advertisement } from '@/entities/advertisement';
+import { AdvertisemenSkleton } from '@/shared/ui';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   news: NewsModel[];
@@ -19,6 +21,9 @@ const FeaturedNews: React.FC<Props> = ({ news, className }) => {
           <BannerNewsItem item={news[3]} className="hidden lg:block" />
         </div>
       </div>
+      <Suspense fallback={<AdvertisemenSkleton />}>
+        <Advertisement addsIndex={2} height={160} />
+      </Suspense>
     </section>
   );
 };

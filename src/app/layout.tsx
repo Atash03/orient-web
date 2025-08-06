@@ -58,7 +58,7 @@ export const metadata: Metadata = {
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html>
+    <>
       <head>
         <meta
           name="google-site-verification"
@@ -99,7 +99,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         />
       </head>
       {children}
-    </html>
+    </>
   );
 }
 

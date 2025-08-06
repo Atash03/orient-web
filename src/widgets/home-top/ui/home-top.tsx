@@ -7,8 +7,7 @@ import { HomePosts } from './posts';
 import { LentaNews, Marquee } from '@/shared/ui';
 
 const HomeTop = async () => {
-  const homeTopData = await getHomeTop();
-  const posts = await getPosts();
+  const [homeTopData, posts] = await Promise.all([getHomeTop(), getPosts()]);
 
   // temporary solution, need to fix it later
   if (!homeTopData || !posts) {
@@ -22,7 +21,7 @@ const HomeTop = async () => {
       <section className="container flex flex-col md:gap-[80px] xl:grid xl:grid-cols-3 xl:gap-[24px]">
         <FeaturedNews
           news={homeTopData.data.featured}
-          className="col-span-2 lg:mt-[40px] xl:max-h-[528px]"
+          className="col-span-2 lg:mt-[40px] flex flex-col gap-2"
         />
         <HomePosts posts={posts.data.data} showNumber={3} />
         <LentaNews
