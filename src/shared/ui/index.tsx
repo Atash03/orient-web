@@ -6,4 +6,4 @@ export { Marquee } from './marquee';
 export { LentaNews } from './lenta-news';
 export { PostCardSkleton } from './skletons/post-card';
 export { MenuNewsSkleton } from './skletons/menu-news';
-export { AdvertisemenSkleton } from './skletons/advertisement'
+export { AdvertisemenSkleton } from './skletons/advertisement';

@@ -21,7 +21,7 @@ const HomeTop = async () => {
       <section className="container flex flex-col md:gap-[80px] xl:grid xl:grid-cols-3 xl:gap-[24px]">
         <FeaturedNews
           news={homeTopData.data.featured}
-          className="col-span-2 lg:mt-[40px] flex flex-col gap-2"
+          className="col-span-2 flex flex-col gap-2 lg:mt-[40px]"
         />
         <HomePosts posts={posts.data.data} showNumber={3} />
         <LentaNews

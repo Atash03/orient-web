@@ -19,7 +19,7 @@ export const HomeMid = async () => {
 
   return (
     <section>
-      <section className='container hidden md:flex lg:gap-[24px] overflow-auto'>
+      <section className="container hidden overflow-auto md:flex lg:gap-[24px]">
         <div className="flex flex-col gap-[80px] lg:grid lg:grid-cols-2 lg:gap-[24px]">
           <NewsSectionLayout
             data={homeMidData.data.world}
@@ -29,7 +29,12 @@ export const HomeMid = async () => {
           <NewsSectionLayout data={homeMidData.data.popular} title={headings('mostRead')} />
         </div>
         <Suspense>
-          <Advertisement addsIndex={3} height={478} width={1200} className='hidden lg:block sticky stickyPosition top-[15px] h-fit' />
+          <Advertisement
+            addsIndex={3}
+            height={478}
+            width={1200}
+            className="stickyPosition sticky top-[15px] hidden h-fit lg:block"
+          />
         </Suspense>
       </section>
       <div className="lg:text-on-surface bg-[#00822C] text-white lg:mt-[70px] lg:bg-transparent">

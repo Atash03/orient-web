@@ -1,1 +1,1 @@
-export { Advertisement } from './ui/advertisement'
+export { Advertisement } from './ui/advertisement';
