@@ -6,6 +6,7 @@ import { routing } from '@/shared/lib/i18n/routing';
 import { notFound } from 'next/navigation';
 import { Footer } from '@/widgets/footer';
 import { Advertisement } from '@/entities/advertisement';
+import { Suspense } from 'react';
 
 export default async function RootLayout({
   children,
@@ -22,7 +23,9 @@ export default async function RootLayout({
 
   return (
     <AppProvider locale={locale}>
-      <Advertisement addsIndex={1} height={100} />
+      <Suspense>
+        <Advertisement addsIndex={1} height={100} />
+      </Suspense>
       <Header />
       {children}
       <Footer />

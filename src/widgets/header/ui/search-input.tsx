@@ -65,7 +65,7 @@ const SearchInput: React.FC<Props> = ({ socials }) => {
         <h1
           className={cn(
             'text-tertiary-500 absolute left-[calc(100%+8px)] hidden text-nowrap text-[min(2.9vw,20px)] font-[600] leading-[28px] transition-all duration-300 sm:block lg:relative lg:left-0 lg:w-full lg:max-w-[376px] lg:text-wrap lg:text-[24px] xl:max-w-fit',
-            isOpen ? 'md:max-lg:opacity-0' : 'md:max-lg:opacity-100',
+            isOpen ? 'absolute -z-10 md:max-lg:opacity-0' : 'md:max-lg:opacity-100',
           )}>
           {t('quote')}
         </h1>
@@ -78,7 +78,9 @@ const SearchInput: React.FC<Props> = ({ socials }) => {
             placeholder={t('inputPlaceholder')}
             className={cn(
               'bg-surface-800 focus:outline-on-surface h-[48px] max-w-[360px] rounded-[4px] px-4 py-[8px] text-[14px] transition-all duration-300 ease-in focus:outline-1 lg:w-[360px]',
-              isOpen ? 'max-lg:w-full max-lg:opacity-100' : 'max-lg:w-0 max-lg:opacity-0',
+              isOpen
+                ? 'relative z-10 max-lg:w-full max-lg:opacity-100'
+                : 'max-lg:w-0 max-lg:opacity-0',
             )}
             maxLength={50}
             value={text}
@@ -87,10 +89,7 @@ const SearchInput: React.FC<Props> = ({ socials }) => {
           <button
             onClick={!isDesktop ? toggleMenu : () => setText('')}
             className="flex size-[48px] shrink-0 items-center justify-center lg:absolute lg:right-[12px] lg:size-[32px] lg:cursor-pointer lg:p-[9px]">
-            <Image
-              src={isOpen || text ? exit : searchSvg}
-              alt={isOpen ? 'exitIcon' : 'searchIcon'}
-            />
+            <Image src={isOpen ? exit : searchSvg} alt={isOpen ? 'exitIcon' : 'searchIcon'} />
           </button>
         </div>
       </div>

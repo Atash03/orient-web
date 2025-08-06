@@ -56,8 +56,12 @@ const HamburgerMenu = ({ data }: { data: MenuItem[] }) => {
 
       {/* Actual menu */}
       <div
+        style={{
+          top: 110,
+          overflowY: 'scroll',
+        }}
         className={cn(
-          'z-100 text-on-surface fixed inset-0 top-[80px] flex flex-col gap-[24px] bg-white px-4 py-[32px] transition-all duration-300 ease-in-out md:right-0 md:w-full md:max-w-[512px] lg:hidden',
+          'z-100 text-on-surface fixed inset-0 flex flex-col gap-[24px] bg-white px-4 py-[32px] transition-all duration-300 ease-in-out md:right-0 md:w-full md:max-w-[512px] lg:hidden',
           isOpen
             ? 'translate-x-0 md:translate-x-[calc(100dvw-512px)]'
             : 'translate-x-full md:translate-x-[100dvw]',
