@@ -24,7 +24,7 @@ export const PostsCard: React.FC<Props> = ({ item, categories, summary, classNam
         className,
       )}
       {...props}>
-      <div className="relative w-full flex-1 overflow-hidden rounded-[4px]">
+      <div className="relative max-h-[270px] w-full flex-1 overflow-hidden rounded-[4px]">
         <Image src={item.main_image} alt={item.slug} fill className="object-cover" />
       </div>
       <div className="flex flex-col gap-4 md:col-span-2 md:justify-between lg:col-span-3">

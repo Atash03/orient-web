@@ -12,11 +12,11 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 const styles: {
   [key: number]: string;
 } = {
-  0: 'col-span-2 row-span-2 text-heading-3 lg:flex lg:flex-col',
+  0: 'col-span-2 row-span-2 text-heading-5 lg:flex lg:flex-col',
   1: 'lg:flex lg:flex-col',
   2: 'lg:flex lg:flex-col',
-  3: 'hidden xl:block',
-  4: 'hidden xl:block',
+  3: 'hidden xl:flex',
+  4: 'hidden xl:flex',
 };
 
 const EditorsChoice: React.FC<Props> = ({ data }) => {

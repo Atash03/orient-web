@@ -31,7 +31,9 @@ function SectionTemplate<T>({ data, href, headingTitle, renderItem }: Props<T>) 
         <div className="hidden space-y-[22px] py-[32px] md:block">
           <div className="flex items-center justify-between">
             <Heading text="" title={headings(headingTitle)} className="text-heading-5" />
-            <Link href={href}>{buttons('showMore')}</Link>
+            <Link href={href} className="rounded-[4px] border border-[#A0B3A7] px-[24px] py-[12px]">
+              {buttons('showMore')}
+            </Link>
           </div>
           <div className="grid grid-cols-4 items-center gap-[24px] *:justify-self-center">
             {data.map((item, index) => renderItem(item, index))}

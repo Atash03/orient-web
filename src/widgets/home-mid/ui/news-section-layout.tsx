@@ -2,7 +2,7 @@ import { NewsCard } from '@/entities/news';
 import { NewsModelMid } from '@/entities/news/model';
 import { Link } from '@/shared/lib/i18n/navigation';
 import { cn } from '@/shared/lib/utils';
-import { Button, Heading } from '@/shared/ui';
+import { Heading } from '@/shared/ui';
 import { getTranslations } from 'next-intl/server';
 import React, { HTMLAttributes } from 'react';
 
@@ -34,13 +34,6 @@ const NewsSectionLayout: React.FC<Props> = async ({ data, href, title, className
             </div>
           ))}
         </div>
-        {href && (
-          <Link href={href}>
-            <Button className="hidden w-full cursor-pointer rounded-[4px] border border-[#A0B3A7] py-[12px] capitalize lg:block">
-              {t('showMore')}
-            </Button>
-          </Link>
-        )}
       </article>
     )
   );

@@ -6,7 +6,7 @@ import { MediaDialog } from '@/features/media-dialog';
 export function PhotoCard({ photo }: { photo: PhotoModel }) {
   return (
     <MediaDialog media={photo}>
-      <div className="text-text-3 h-full min-h-[312px] w-full max-w-[320px] cursor-pointer overflow-hidden rounded-[4px] md:max-w-full">
+      <div className="text-text-3 h-full min-h-[280px] w-full max-w-[320px] cursor-pointer overflow-hidden rounded-[4px] md:max-w-full">
         <div className="bg-surface relative h-[57%] w-full lg:flex-1">
           <Image src={photo.poster_file} alt={photo.name} fill className="object-cover" />
         </div>

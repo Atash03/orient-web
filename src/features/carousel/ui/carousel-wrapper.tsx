@@ -44,7 +44,9 @@ export function CarouselWrapper<T>({
         <div className="space-y-[22px] py-[32px]">
           <div className="flex items-center justify-between">
             <Heading text="" title={headings(headingTitle)} className="text-heading-5" />
-            <Link href={href}>{buttons('showMore')}</Link>
+            <Link href={href} className="rounded-[4px] border border-[#A0B3A7] px-[24px] py-[12px]">
+              {buttons('showMore')}
+            </Link>
           </div>
           <Carousel
             setApi={setApi}

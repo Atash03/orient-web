@@ -17,15 +17,15 @@ const NewsCard: React.FC<Props> = async ({ item, className, ...props }) => {
     <Link
       href={`/post/${item.id}/${item.slug}`}
       className={cn(
-        'flex min-h-[370px] w-full flex-col gap-[8px] md:grid md:min-h-[275px] md:grid-cols-3 lg:grid-cols-2',
+        'flex w-full flex-col gap-[8px] md:grid md:grid-cols-3 lg:grid-cols-2',
         className,
       )}
       {...props}>
-      <div className="relative w-full flex-1 overflow-hidden rounded-[4px]">
+      <div className="relative h-[155px] w-full overflow-hidden rounded-[4px]">
         <Image src={item.main_image} alt={item.slug} fill className="object-cover" />
       </div>
       <div className="flex flex-col gap-4 md:col-span-2 md:justify-between lg:col-span-1">
-        <h1 className="text-on-surface text-text-1">{item.title}</h1>
+        <h1 className="text-on-surface text-text-1 xl:line-clamp-4">{item.title}</h1>
         <div className="text-text-3 flex items-center gap-4">
           <div className="text-secondary flex items-center gap-[8px] md:hidden">
             <span>{t('type')}</span>

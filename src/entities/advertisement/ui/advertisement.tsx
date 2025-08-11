@@ -4,7 +4,7 @@ import { getAdvertisements } from '../api/get-advertisements';
 import { cn } from '@/shared/lib/utils';
 
 interface Props {
-  addsIndex: 1 | 2 | 3;
+  addsIndex: 0 | 1 | 2 | 3 | 4 | 5 | 6; // hard coded adds index
   intervalTime?: number;
   width?: number;
   height?: number;

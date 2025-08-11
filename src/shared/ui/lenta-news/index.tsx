@@ -19,7 +19,7 @@ export const LentaNews: React.FC<Props> = async ({ news, className }) => {
         className,
       )}>
       <Heading title={t('title')} text="Lenta" className="text-heading-5 md:py-0" />
-      <article className="custom-scroll flex flex-col gap-4 xl:h-fit xl:overflow-y-scroll xl:pr-[7px]">
+      <article className="custom-scroll flex flex-col gap-4 lg:h-fit lg:overflow-y-scroll lg:pr-[7px]">
         {news.map((item) => (
           <div key={item.id} className="flex flex-col gap-4">
             <FlatNewsCard item={item} />
