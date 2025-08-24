@@ -24,11 +24,15 @@ const MenuItems = async ({ data }: { data: MenuItem[] }) => {
     <ul className="flex items-center gap-[23px] py-[12px]">
       {data.map((menu, i) => {
         const url = locale === 'ru' ? menu.url : menu.viewBag.locale[locale as 'en' | 'tm'].url;
-        const customUrl = url ? url : menu.title === "О нас" ? `/${locale}/new/o-nas` : menu.title === "Контакты" && `/${locale}/contact`
+        const customUrl = url
+          ? url
+          : menu.title === 'О нас'
+            ? `/${locale}/new/o-nas`
+            : menu.title === 'Контакты' && `/${locale}/contact`;
 
         return (
           <li key={i} className="relative">
-            <Link href={customUrl ? customUrl : ""} className="text-[16px] font-semibold">
+            <Link href={customUrl ? customUrl : ''} className="text-[16px] font-semibold">
               {locale === 'ru' ? menu.title : menu.viewBag.locale[locale as 'en' | 'tm'].title}
             </Link>
           </li>
