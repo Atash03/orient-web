@@ -33,5 +33,18 @@
     "header": "Results found for «{search}»",
     "searchInCategory": "Search within category:",
     "error": "Nothing found"
+  },
+  "about": {
+    "title": "ORIENT Information Portal",
+    "subtitle": "ORIENT – your opinion matters",
+    "description": "The ORIENT.tm website is a new player in Turkmenistan's information market.",
+    "teamDescription": "The economic society 'Media Turkmen' is the first non-governmental news agency in Turkmenistan, registered with the country's official bodies in April 2017. It includes two divisions operating under one brand: the ORIENT website and production studio, which create news, photo, video and advertising content.",
+    "teamInfo": "The ORIENT team consists mainly of young journalists, graduates of Turkmen and foreign universities. The 'Media Turkmen' news agency also collaborates with experienced journalists who conduct master classes and seminars to improve the team's qualifications.",
+    "partnership2018": "In 2018, ORIENT became the General Media Partner of the World Weightlifting Championship held in Ashgabat and the largest regional specialized forum 'Oil and Gas of Turkmenistan 2018'.",
+    "partnership2019": "This year, ORIENT became the General Media Partner of the 10th International Gas Congress TGC-2019 and in May there were publications about this forum, participants and sponsors.",
+    "chinaDaily": "On July 12, 2019, ORIENT signed an agreement with China Daily Multimedia Co., Ltd. for cooperation on mutual news exchange and promotion on their platforms, as well as implementation of joint media projects.",
+    "austriaAgreement": "On August 15, 2019, ORIENT signed a Memorandum of Cooperation in the field of news exchange with the Austro-Turkmen Society.",
+    "russiaAgreement": "On November 11, 2019, ORIENT signed a Memorandum of Cooperation in the field of news exchange with the journal 'International Life' of the Ministry of Foreign Affairs of the Russian Federation.",
+    "socialMedia": "The website has its own pages on social networks Facebook, Twitter, YouTube, LinkedIn, Instagram, Telegram, Vkontakte, Odnoklassniki – where readers can also discuss topics and articles."
   }
 }
