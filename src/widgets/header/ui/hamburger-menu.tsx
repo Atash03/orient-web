@@ -122,10 +122,15 @@ const MenuItemComponent = ({
     // if menu has submenus, then toggle it, and if it hasn't, then redirect to the url
     if (menu.items) {
       setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-    } else if (menu.url) {
+    } else {
       const url = locale === 'ru' ? menu.url : menu.viewBag.locale[locale as 'en' | 'tm'].url;
+      const customUrl = url
+        ? url
+        : menu.title === 'О нас'
+          ? `/${locale}/new/o-nas`
+          : menu.title === 'Контакты' && `/${locale}/contact`;
       toggleMenu();
-      router.push(url);
+      router.push(customUrl ? customUrl : '');
     }
   };
 
